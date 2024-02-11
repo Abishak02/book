@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book World</title>
+    <!-- Include dynamic header content -->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/desk_home.css}">
+    
+</head>
+<body>
+	<th:block th:insert="header :: header"></th:block>
+    <section class="adminsign">
+    <form th:action="@{/admindetails}" method="post" th:object="${admin}">
+		<h3>Adim Registration</h3>
+  <div class="mb-3">
+    
+    <input type="text" class="form-control" id="userid" placeholder="Admin Id" th:field="*{userid}">
+  
+  </div>
+  <div class="mb-3">
+  
+    <input type="password" class="form-control" id="password" placeholder="password" th:field="*{userpassword}">
+    <span id="show">
+    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+    <i class="fa fa-eye" aria-hidden="true" style="display:none;"></i>
+  </span>
+  </div>
+   <div class="mb-3" style="">
+    
+    <input type="password" class="form-control" id="confirm_password" placeholder="confirm password"   th:field="*{comuserpassword}">
+    <span id="showPasss">
+    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+    <i class="fa fa-eye" aria-hidden="true" style="display:none;"></i>
+  </span>
+  </div>
+
+  <button type="submit" class="loginbut">Sign Up </button>
+</form>
+    </section>
+    <!-- Include dynamic footer content -->
+    <th:block th:insert="footer :: footer"></th:block>
+     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+      <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+     <script>
+		var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword; 
+		 
+		 	$(document).ready(function() {
+  $("#showPasss").click(function() {
+    if ($("#confirm_password").attr("type") == "password") {
+      $("#confirm_password").attr("type", "text");
+    } else {
+      $("#confirm_password").attr("type", "password");
+    }
+  });
+  $("#showPasss").click(function() {
+    $("#showPasss i").toggle();
+  });
+});
+			 	$(document).ready(function() {
+  $("#show").click(function() {
+    if ($("#password").attr("type") == "password") {
+      $("#password").attr("type", "text");
+    } else {
+      $("#password").attr("type", "password");
+    }
+  });
+  $("#show").click(function() {
+    $("#show i").toggle();
+  });
+}); 
+	 </script>
+		 
+</body>
+</html>

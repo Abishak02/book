@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Header</title>
+
+</head>
+<body>
+    <header>
+       <section class="navigationbar">
+		 <nav class="navbar navbar-expand-lg navbar-light ">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <!--<img th:src="@{/assets/Images/bboklogo.jpg}" width="100%">-->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/index}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/contact}"  aria-current="page">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" th:href="@{/booklist}"  aria-current="page">Book list</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav">
+		    <li class="nav-item">
+          <a class="nav-link active" th:href="@{/adminlogin}"  aria-disabled="page">Admin login</a>
+        </li>
+      </ul>
+	
+    </div>
+  </div>
+</nav>
+	   </section>
+    </header>
+</body>
+</html>

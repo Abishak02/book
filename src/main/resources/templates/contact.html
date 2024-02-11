@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book World</title>
+    <!-- Include dynamic header content -->
+      <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/desk_home.css}">
+        
+</head>
+<body>
+	<th:block th:insert="~{header :: header}"></th:block>
+	<section class="contact">
+    <h1>Contact</h1>
+<p style="text-align: justify;">365, Anna Salai,</p>
+<p style="text-align: justify;">Rostrevor Garden,</p>
+<p style="text-align: justify;">Teynampet,</p>
+<p style="text-align: justify;">Chennai,</p>
+<p style="text-align: justify;">Tamil Nadu 600018,</p>
+<p style="text-align: justify;">India</p>
+<p style="text-align: justify;">HELP@HELPLINECENTER.com</p>
+<p style="text-align: justify;">HELPLINE: 211</p>
+</section>
+       <th:block th:insert="~{footer :: footer}"></th:block>
+     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+	
+</body>
+</html>

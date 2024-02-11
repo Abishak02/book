@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book World</title>
+    <!-- Include dynamic header content -->
+      <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/desk_home.css}">
+        
+</head>
+<body>
+	<th:block th:insert="header :: header"></th:block>
+    <h1>Book deatils</h1>
+    <div class="container" style="height: 500px;"> 
+		<table class="table" id="myTable">
+  <thead>
+    <tr>
+      <th scope="col">S.no</th>
+      <th scope="col">Book name</th>
+      <th scope="col">Author name</th>
+  
+      <th scope="col">Publish date</th>
+       <th scope="col">Book description</th>
+       <th scope="col">Actions
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+     
+  <tr th:each="entity, iterStat : ${book}">
+	   
+               <td th:text="${iterStat.index + 1}"></td>
+                <td th:text="${entity.name}"></td>
+                   <td th:text="${entity.username}"></td>
+
+                    <td th:text="${entity.dop}"></td>
+                    <td th:text="${entity.technology}"></td>
+                     <td><a th:href="@{'/delete/' + ${entity.userId}}" onclick="return confirm('Are you sure you want to delete this book?')">
+<i class='fa fa-trash'></i></a>
+    </td>
+    </tr>
+   
+  </tbody>
+</table>
+	</div>
+
+   <th:block th:insert="footer :: footer"></th:block>
+     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+	
+</body>
+</html>

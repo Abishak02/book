@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book World</title>
+    <!-- Include dynamic header content -->
+     <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/desk_home.css}">
+    
+</head>
+<body>
+	<th:block th:insert="header :: header"></th:block>
+    <section class="login">
+    <form th:action="@{/adminregister}" method="post" th:object="${admin}">
+		<h4 style="padding: 10px;">Welcome Back!</h4>
+		<h5 style="padding: 10px;">Admin Login</h5>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Admin Id</label>
+    <input type="text" class="form-control" id="userid" th:field="*{userid}">
+  
+  </div>
+  <div class="mb-3">
+	  
+
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="myPass" th:field="*{userpassword}"> 
+        <span id="showPass">
+    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+    <i class="fa fa-eye" aria-hidden="true" style="display:none;"></i>
+  </span>
+
+  </div>
+ <div class="butn">
+	 <label for="exampleInputPassword1" class="form-label"> &nbsp;</label>
+  <button type="submit" class="loginbut">Login</button>
+
+  <p>New User?<a th:href="@{/admindetail}" target="_blank">Click Here</a></p>
+  </div>
+  
+</form>
+    </section>
+    <!-- Include dynamic footer content -->
+    <th:block th:insert="footer :: footer"></th:block>
+     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+     <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js}"></script>
+     <script>
+		$(document).ready(function() {
+  $("#showPass").click(function() {
+    if ($("#myPass").attr("type") == "password") {
+      $("#myPass").attr("type", "text");
+    } else {
+      $("#myPass").attr("type", "password");
+    }
+  });
+  $("#showPass").click(function() {
+    $("#showPass i").toggle();
+  });
+});
+
+		 
+	 </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book World</title>
+    <!-- Include dynamic header content -->
+      <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/desk_home.css}">
+    
+</head>
+<body>
+	<th:block th:include="header :: header"></th:block>
+<section class="bookreg">
+<form th:action="@{/register}" method="post" th:object="${user}">
+	<h3>Registration page</h3>
+	 <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Book name</label>
+    <input type="text" id="name" class="form-control"  th:field="*{name}" >
+  
+  </div>
+	 <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Author name</label>
+<input type="text" id="username" class="form-control"  th:field="*{username}">
+  
+  </div>
+   <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Publish date</label>
+<input type="date" id="dop"  class="form-control"  th:field="*{dop}">
+  
+  </div>
+
+   
+   <div class="mb-3" style="margin-left: -24px;">
+    <label for="exampleInputEmail1" class="form-label" style="vertical-align: top;">Book description</label>
+
+  <textarea  id="technology"  class="form-control"  th:field="*{technology}" rows="4" cols="50">
+
+</textarea>
+  </div>
+	
+	
+ <div class="butn">
+	 <label for="exampleInputPassword1" class="form-label"> &nbsp;</label>
+  <button type="submit" class="loginbut">Submit</button>
+
+
+  </div>
+</form>
+</section>
+ <!-- Include dynamic footer content -->
+    <th:block th:include="footer :: footer"></th:block>
+     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>

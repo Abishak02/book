@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book World</title>
+    <!-- Include dynamic header content -->
+    <link rel="stylesheet" th:href="@{font/css/font-awesome.min.css}">
+  <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+      <link rel="stylesheet" th:href="@{/assets/css/desk_home.css}">
+    
+</head>
+<body>
+	<th:block th:insert="header :: header"></th:block>
+	<section>
+ 
+ <div class="index">
+	    <h1>Welcome to my Book Store!</h1>
+   <img th:src="@{/assets/Images/book_inage.jpg}" width="100%">
+   <p>Welcome to our enchanting haven for bibliophiles – a literary sanctuary where every page holds the promise of a new adventure and every shelf whispers tales of countless worlds. Our book store is a haven for those who seek the intoxicating aroma of freshly printed pages and the tactile joy of flipping through the chapters of a well-loved book</p>
+   </div>
+  </section>
+    <!-- Include dynamic footer content -->
+    <th:block th:insert="footer :: footer"></th:block>
+     <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
